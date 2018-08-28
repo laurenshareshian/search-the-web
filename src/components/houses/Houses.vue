@@ -14,10 +14,11 @@
     <div class="search-container">
       <ul v-if="houses">
         <p> Length of Results: {{houses.length}} </p>
-        <House v-for="house in houses"
+        <House v-for="house in uniqueHouses"
           :key="house.property_id"
           :house="house"
         />
+
       </ul>
     </div>
 
@@ -67,6 +68,19 @@ export default {
           this.error = err.message;
           this.loading = false;
         });
+    },
+  },
+  computed: {
+    uniqueHouses: function() {
+      var filtered_array = [];
+      var property_ids = [];
+      for(var i = 0; i < this.houses.length; i++) {
+        if(property_ids.indexOf(this.houses[i].property_id) === -1) {
+          property_ids.push(this.houses[i].property_id);
+          filtered_array.push(this.houses[i]);
+        }
+      }
+      return filtered_array;
     }
   }
 };

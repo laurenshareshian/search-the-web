@@ -6,7 +6,7 @@ export default {
   //    - use "encodeURIComponent" to escape search values:
   //    ?APIKEY=abc123&search=${encodeURIComponent(name)}
 
-    let searchString = `https://www.portlandmaps.com/api/assessor/?api_key=FD35EC4B8D96AA58FAD98FD40B530D67&sqft_larger=1`;
+    let searchString = 'https://www.portlandmaps.com/api/assessor/?api_key=FD35EC4B8D96AA58FAD98FD40B530D67&sqft_larger=1';
     searchString += `&sold_after=${ encodeURIComponent(searchTerms[0])} `;
     searchString += `&sold_before=${ encodeURIComponent(searchTerms[1])} `;
     searchString += `&market_larger=${ encodeURIComponent(searchTerms[2])} `;
@@ -15,7 +15,6 @@ export default {
     searchString += `&sqft_smaller=${ encodeURIComponent(searchTerms[5])} `;
     searchString += `&built_after=${ encodeURIComponent(searchTerms[6])} `;
     searchString += `&built_before=${ encodeURIComponent(searchTerms[7])} `;
-    console.log(searchString);
     return fetch(searchString)
     /* de-serialize the data to real JavaScript object! */
       .then(response => response.json());
