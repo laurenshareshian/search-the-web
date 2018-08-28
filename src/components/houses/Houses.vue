@@ -37,7 +37,7 @@ export default {
       loading: false,
       error: null,
       search: '',
-      total: 0
+      total: 0,
     };
   },
   components: {
