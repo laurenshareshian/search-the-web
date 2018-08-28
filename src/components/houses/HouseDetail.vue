@@ -1,7 +1,7 @@
 <template>
     <div>
       <section v-if="house">
-        <h1>Address: {{ house.address }}</h1>
+        <h2>{{ house.address }}</h2>
         <p>Sale Price: {{ house.sale_price }}</p>
         <p>Sale Date: {{ house.sale_date }}</p>
         <p>Owner: {{ house.owner }}</p>
@@ -56,14 +56,8 @@ p {
   text-align: center !important;
   text-transform: uppercase;
 }
-.detail-nav{
-  background: #e9e9e94f;
-  padding: 20px;
-  text-align: center;
+section {
+  margin-bottom: 200px;
 }
-.detail-nav-a {
-  color: black;
-  
-}
-h1 {text-align: center}
+h2 {text-align: center}
 </style>

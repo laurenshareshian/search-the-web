@@ -1,24 +1,23 @@
 <template>
   <section class="houses">
-    <h2>Houses</h2>
 
-    <HousesSearch :onSearch="handleSearch"/>
-    
+
+    <div class='houses-search'>
+      <HousesSearch :onSearch="handleSearch"/>
+    </div>
     <Loader :loading="loading"/>
 
     <pre v-show="error" class="error">
       {{error}}
     </pre>
 
-    <p v-if="search">Searching for &quot;{{ search }}&quot;</p>
-    <div class="search-container">
+    <h3 class='length' v-if="houses">  Length of Results: {{houses.length}} </h3>
+    <div class="houses-body">
       <ul v-if="houses">
-        <p> Length of Results: {{houses.length}} </p>
         <House v-for="house in uniqueHouses"
           :key="house.property_id"
           :house="house"
         />
-
       </ul>
     </div>
 
@@ -86,7 +85,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 .error {
   color: red;
@@ -100,4 +99,54 @@ export default {
   font-weight: bolder;
   background: rgba(0, 0, 0, .6);
 }
+
+.houses-title {
+  background: white;
+  padding: 20px;
+}
+.houses-body {
+  padding: 50px 100px 50px 100px ;
+  background: #e9e9e9;
+  text-align:center;
+  margin:0;
+}
+h3{
+  font-family:'Playfair Display';
+  font-size:25px;
+  letter-spacing: 1px;
+  color:white;
+  margin-bottom:0;
+  text-transform: none;
+  padding: 20px;
+}
+h1 {
+    margin-top: 0px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+  padding-left:0px;
+  color:#282828f2;
+  
+}
+.length {color: black;}
+li {
+  min-height: 250px;
+  background:#282828f2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* box-shadow: 0px 1px 5px rgba(0,0,0,0.2); */
+  transition: all .2s ease-in-out;
+  list-style: none;
+  text-align: center;
+  position: relative;
+}
+li:hover {
+  transform: scale(1.03); 
+}
+
+
 </style>
