@@ -49,7 +49,7 @@ p {
   text-align: center !important;
 }
 .title-bg {
-  background: #282828f2;
+  background: black;
   color:white;
   position: absolute;     
   text-align: center;  
