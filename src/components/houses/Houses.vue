@@ -1,7 +1,5 @@
 <template>
   <section class="houses">
-
-
     <div class='houses-search'>
       <HousesSearch :onSearch="handleSearch"/>
     </div>
@@ -125,7 +123,7 @@ h1 {
 
 ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 10px;
   padding-left:0px;
   color:black;
@@ -134,7 +132,7 @@ ul {
 .length {color: black;}
 li {
   min-height: 250px;
-  background: black;
+  background:black;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
